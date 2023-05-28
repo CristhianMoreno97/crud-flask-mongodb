@@ -1,0 +1,28 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Flask
+instance/
+.webassets-cache/
+.sass-cache/
+
+# MongoDB
+data/
+dump/
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
