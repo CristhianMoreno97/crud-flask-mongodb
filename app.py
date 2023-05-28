@@ -1,10 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
+from views import home_view
 
 app = Flask(__name__)
-
-@app.route('/')
-def home() -> str:
-    return render_template('index.html')
+app.register_blueprint(home_view.blueprint)
 
 def run_app():
     app.run(debug=True, port=4000)
