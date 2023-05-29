@@ -99,6 +99,8 @@ def addComputer() -> str:
             return redirect("/computers")
         except Exception as e:
             print(f"Error adding computer: {str(e)}")
+    else:
+        return Response("Computer not found", status=404)
 
 @computer_blueprint.route("/delete/<string:computer_name>", methods=["POST"])
 def deleteComputer(computer_name: str) -> str:
