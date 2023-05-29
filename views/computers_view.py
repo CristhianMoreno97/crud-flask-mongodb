@@ -96,6 +96,16 @@ def addComputer() -> str:
                 stock,
             )
             computers.insert_one(computer.toDBCollection())
-            return redirect("/computers/add")
+            return redirect("/computers")
         except Exception as e:
             print(f"Error adding computer: {str(e)}")
+
+@computer_blueprint.route("/delete/<string:computer_name>", methods=["POST"])
+def deleteComputer(computer_name: str) -> str:
+    computers = db.getCollection("computers")
+    computer = computers.find_one({"name": computer_name})
+    if computer:
+        computers.delete_one({"name": computer_name})
+        return redirect("/computers")
+    else:
+        return Response("Computer not found", status=404)
