@@ -102,7 +102,7 @@ def addComputer() -> str:
     else:
         return Response("Computer not found", status=404)
 
-@computer_blueprint.route("/delete/<string:computer_name>", methods=["POST"])
+@computer_blueprint.route("/delete/<string:computer_name>", methods=["GET"])
 def deleteComputer(computer_name: str) -> str:
     computers = db.getCollection("computers")
     computer = computers.find_one({"name": computer_name})
