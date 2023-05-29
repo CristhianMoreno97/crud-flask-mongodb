@@ -21,6 +21,9 @@
                         <h5 class="text-center">
                             Computadoras
                         </h5>
+                        <div class="text-center">
+                            <a href="/computers/add" class="btn btn-primary">Agregar computadora</a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
@@ -47,6 +50,9 @@
                                             <form action="/computers/edit/{{computer.name}}" method="GET">
                                                 <button class="btn btn-primary" type="submit">editar</button>
                                             </form>
+                                            <!--boton para eliminar computadora-->
+                                            <form action="/computers/delete/{{computer.name}}" method="POST">
+                                                <button class="btn btn-danger" type="submit">eliminar</button>
                                         </li>
                                     </div>
 
