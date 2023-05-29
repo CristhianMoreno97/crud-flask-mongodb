@@ -47,12 +47,8 @@
                                             <!--show stock-->
                                             <small>stock:</small>
                                             <p class="mb-3">{{computer.stock}}</p>
-                                            <form action="/computers/edit/{{computer.name}}" method="GET">
-                                                <button class="btn btn-primary" type="submit">editar</button>
-                                            </form>
-                                            <!--boton para eliminar computadora-->
-                                            <form action="/computers/delete/{{computer.name}}" method="POST">
-                                                <button class="btn btn-danger" type="submit">eliminar</button>
+                                            <a href="/computers/edit/{{computer.name}}" class="btn btn-warning">Editar</a>
+                                            <a href="/computers/delete/{{computer.name}}" class="btn btn-danger">eliminar</a>
                                         </li>
                                     </div>
 
