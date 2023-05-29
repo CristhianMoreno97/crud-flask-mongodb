@@ -44,6 +44,9 @@
                                             <!--show stock-->
                                             <small>stock:</small>
                                             <p class="mb-3">{{computer.stock}}</p>
+                                            <form action="/computers/edit/{{computer.name}}" method="GET">
+                                                <button class="btn btn-primary" type="submit">editar</button>
+                                            </form>
                                         </li>
                                     </div>
 
