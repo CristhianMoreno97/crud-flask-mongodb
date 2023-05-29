@@ -6,6 +6,11 @@ computer_blueprint = Blueprint("computers", __name__, url_prefix="/computers")
 db = connection.Database()
 db.connect()
 
+@computer_blueprint.route("", methods=["GET"])
+def getComputers() -> str:
+    computers = db.getCollection("computers")
+    computers_data = computers.find()
+    return render_template("computers.html", computers_data=computers_data)
 
 @computer_blueprint.route("/add", methods=["GET"])
 def addComputerForm() -> str:
